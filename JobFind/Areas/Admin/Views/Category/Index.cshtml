@@ -1,0 +1,60 @@
+﻿@model List<GetCategoryAdminVM>
+<div class="card-body p-4">
+    <h5 class="card-title fw-semibold mb-4">Recent Transactions</h5>
+    <a  asp-action="Create" class="btn btn-success m-1">Create</a>
+
+    <div class="table-responsive">
+        <table class="table text-nowrap mb-0 align-middle">
+            <thead class="text-dark fs-4">
+                <tr>
+                    <th class="border-bottom-0">
+                        <h6 class="fw-semibold mb-0">Id</h6>
+                    </th>
+                    <th class="border-bottom-0">
+                        <h6 class="fw-semibold mb-0">Name</h6>
+                    </th>
+                    <th class="border-bottom-0">
+                        <h6 class="fw-semibold mb-0">Position</h6>
+                    </th>
+                    <th class="border-bottom-0">
+                        <h6 class="fw-semibold mb-0">Gmail</h6>
+                    </th>
+                    <th class="border-bottom-0">
+                        <h6 class="fw-semibold mb-0">Image</h6>
+                    </th>
+                    <th class="border-bottom-0">
+                        <h6 class="fw-semibold mb-0">Settings</h6>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    
+                <tr>
+                    <td class="border-bottom-0"><h6 class="fw-semibold mb-0">@item.Id</h6></td>
+                    <td class="border-bottom-0">
+                        <h6 class="fw-semibold mb-1">@item.Name</h6>
+                        <span class="fw-normal"></span>
+                    </td>
+                    <td class="border-bottom-0">
+                        
+                            <img style="height:50px; width=50px;" src="@item.Icon" alt="Alternate Text" />
+                    </td>
+                        <td class="border-bottom-0">
+                            <h6 class="fw-semibold mb-1">@item.JobCount</h6>
+                            <span class="fw-normal"></span>
+                        </td>
+                    
+                   
+                        <td class="border-bottom-0">
+                            <a  asp-action="Update" asp-route-id="@item.Id" class="btn btn-primary m-1">Update</a>
+                            <a  asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger m-1">Delete</a>
+                        </td>
+                </tr>
+                }
+                
+            </tbody>
+        </table>
+    </div>
+</div>

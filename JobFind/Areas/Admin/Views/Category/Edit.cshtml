@@ -1,0 +1,18 @@
+﻿@model EditCategoryVM
+
+<div class="card-body">
+    <form method="post">
+        <div class="mb-3" enctype="multipart/from-data">
+            <label asp-for="Name" class="form-label"></label>
+            <input asp-for="Name" class="form-control">
+
+        </div>
+        <div class="mb-3">
+            <label asp-for="IconFile" class="form-label"></label>
+            <input asp-for="IconFile" class="form-control">
+        </div>
+
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
